@@ -1,5 +1,10 @@
 <?php 
 session_start();
+if (!isset($_SESSION['user'])) {
+    echo ("<script>location.href = '../login.php';</script>");
+}
+
+require_once '../utility.php';
 
 ?>
 
@@ -241,6 +246,7 @@ session_start();
                           $merk = $baris-> merk;
                           $model = $baris-> model;
                           $tarif = $baris-> tarif;
+                          $plat = $baris-> plat;
                           $foto = $baris-> foto;
                     ?>
                 <div class="col-lg-4 col-md-6 mb-2">
