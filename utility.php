@@ -10,7 +10,7 @@ function getApp($link)
     $output = curl_exec($ch);
     curl_close($ch);
     $output = json_decode($output);
-    echo $links;
+    // echo $links;
     return $output;
 }
 
@@ -24,6 +24,6 @@ function getAdmin($link)
     $output = curl_exec($ch);
     curl_close($ch);
     $output = json_decode($output);
-    echo $links;
+    // echo $links;
     return $output;
 }
