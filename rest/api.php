@@ -5,15 +5,12 @@ if(function_exists($_GET['function'])) {
      $_GET['function']();
 }
 
-function getServiceId()
+function getUser()
 {
   global $connect;
-  if (!empty($_GET["kode"])) {
-     $kode = $_GET["kode"];      
-  }		
   
    $data = null;
-  $query ="SELECT * FROM service WHERE kode = '$kode'";      
+  $query ="SELECT * FROM register ";      
   $result = $connect->query($query);
   while($row = mysqli_fetch_object($result))
   {
@@ -34,7 +31,6 @@ function getServiceId()
   header('Content-Type: application/json');
   echo json_encode($response);
 }
-
 
 function getUserId()
 {
@@ -245,7 +241,7 @@ function getInputId()
    $data = null;
 
    if (!empty($_GET["id"]))         $id         = $_GET["id"];   
-      
+
   $query ="SELECT * FROM mobil where id = $id ";      
   $result = $connect->query($query);
   while($row = mysqli_fetch_object($result))

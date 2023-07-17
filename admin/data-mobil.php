@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="mb-3">
                     <label for="tarif" class="form-label">Tarif Per Hari</label>
-                    <input type="text" name="tarif" id="harga" value="<?=number_format($tarif,0,",",".")?>" class="form-control form-control-sm" >
+                    <input type="text" name="tarif" id="harga" value="<?=$tarif?>" class="form-control form-control-sm" >
                     
                 </div>
                 <div class="mb-3">

@@ -23,7 +23,7 @@ if (!isset($_SESSION['user'])) {
     <link
       rel="stylesheet" href="../assets/admin/extensions/simple-datatables/style.css"/>
     <link rel="stylesheet" href="../assets/admin/css/pages/simple-datatables.css" />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/admin/css/shared/iconly.css" />
 </head>
 <style>
@@ -133,15 +133,21 @@ if (!isset($_SESSION['user'])) {
                 <div class="sidebar-menu ">
                     <ul class="menu">
                         <li class="sidebar-item">
+                            <a href="?url=data-user" class="sidebar-link">
+                                <i class="bi bi-person-fill"></i>
+                                <span>Data User</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a href="?url=data-mobil" class="sidebar-link">
-                                <i class="bi bi-grid-fill"></i>
+                                <i class="bi bi-car-front-fill"></i>
                                 <span>Data Mobil</span>
                             </a>
                         </li>
 
                         <li class="sidebar-item">
                             <a href="../logout.php" class="sidebar-link">
-                                <i class="bi bi-box-arrow-up-right"></i>
+                                <i class="bi bi-door-open-fill"></i>
                                 <span>Log Out</span>
                             </a>
                         </li>
