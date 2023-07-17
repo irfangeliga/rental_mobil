@@ -3,12 +3,9 @@ if (isset($_GET['url'])) {
     $url = $_GET['url'];
 
     switch ($url) {
-        case 'input';
-            include 'input.php';
-            break;
 
-        case 'read-mobil';
-            include 'read-mobil.php';
+        case 'data-mobil';
+            include 'data-mobil.php';
             break;
 
         default:

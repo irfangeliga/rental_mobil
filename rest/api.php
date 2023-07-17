@@ -175,8 +175,6 @@ function setInput()
       }else{
          $image ="";
       }
-      if($merk && $model && $plat && $tarif)
-      {    
          if($type == 'insert' || $type == 'update') 
          {
             $query = "SELECT * FROM mobil WHERE id = '$id'";
@@ -188,7 +186,6 @@ function setInput()
                $query = "INSERT INTO mobil SET merk = '$merk', model = '$model',  plat = '$plat', tarif = '$tarif'".$image;
             }
          } 
-      }
 
       if($type == 'delete') 
       {
@@ -241,5 +238,34 @@ function getInput()
   echo json_encode($response);
 }
 
+function getInputId()
+{
+  global $connect;
+  
+   $data = null;
+
+   if (!empty($_GET["id"]))         $id         = $_GET["id"];   
+      
+  $query ="SELECT * FROM mobil where id = $id ";      
+  $result = $connect->query($query);
+  while($row = mysqli_fetch_object($result))
+  {
+     $data[] = $row;
+  }
+  if($data)
+  {
+     $response = array(
+        'status' => 1,
+        'data' => $data
+     );               
+  } else {
+     $response=array(
+        'status' => 0,
+        'data' =>$data
+     );
+  }      
+  header('Content-Type: application/json');
+  echo json_encode($response);
+}
 
 ?>
